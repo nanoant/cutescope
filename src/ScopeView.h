@@ -19,30 +19,19 @@ QT_CHARTS_END_NAMESPACE
 
 QT_CHARTS_USE_NAMESPACE
 
-namespace libm2k {
-namespace analog {
-class M2kAnalogIn;
-}
-}  // namespace libm2k
-
-using namespace libm2k::analog;
+class Scope;
 
 class ScopeView : public QChartView {
   Q_OBJECT
 
  public:
-  explicit ScopeView(M2kAnalogIn* ain = nullptr, QWidget* parent = nullptr);
-  ~ScopeView();
-
- public slots:
-  void updateData();
+  explicit ScopeView(Scope* scope, QWidget* parent = nullptr);
 
  private:
+  Scope* m_scope;
   int m_nbChannels;
   QTimer* m_timer;
   QChart* m_chart;
   std::vector<QLineSeries*> m_series;
   std::vector<QVector<QPointF>> m_seriesBuffers;
-  std::vector<std::vector<double>> m_m2kBuffer;
-  M2kAnalogIn* m_ain;
 };
