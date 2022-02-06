@@ -1,0 +1,12 @@
+---
+BasedOnStyle: Chromium
+BinPackArguments: false
+Standard: C++11
+Cpp11BracedListStyle: false
+AlwaysBreakTemplateDeclarations: false
+KeepEmptyLinesAtTheStartOfBlocks: true
+# AllowShortIfStatementsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: true
+NamespaceIndentation: None
+# SortIncludes: false
+...
