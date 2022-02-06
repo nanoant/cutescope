@@ -11,7 +11,14 @@ Qt based oscilloscope app for Analog Devices ADALM2000 using [libm2k][libm2k] an
 Building
 --------
 
-Just run `build.sh` adjusting `extsrcdir` variable pointing to root directory containing [libm2k][libm2k] and [iio][libiio] sources. This software was so far only built and tested on macOS Catalina 10.15.7.
+Just run `build.sh` adjusting `extsrcdir` variable pointing to root directory containing [libm2k][libm2k] and [iio][libiio] sources.
+
+**WARNING** This software was so far only developed, built and tested on macOS Catalina 10.15.7.
+
+Screenshots
+-----------
+
+![Prototype](images/Prototype.png)
 
 License
 -------
