@@ -6,7 +6,7 @@ Cutescope
 
 Qt based oscilloscope app for Analog Devices ADALM2000 using [libm2k][libm2k] and [iio][libiio].
 
-![Icon](resources/Cutescope.png)
+<img alt="Icon" src="resources/Cutescope.png" width="256" height="256" />
 
 Building
 --------
