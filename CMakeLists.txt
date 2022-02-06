@@ -23,15 +23,21 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
 endif()
 
 find_package(Qt5 COMPONENTS Widgets Charts REQUIRED)
+
+# NOTE: libiio does not export cmake configuration
+# find_package(libiio REQUIRED)
+find_package(PkgConfig REQUIRED)
+pkg_search_module(PKG_LIBIIO REQUIRED IMPORTED_TARGET libiio)
+
 find_package(libm2k REQUIRED)
 
 include_directories(
-    ${CMAKE_INSTALL_PREFIX}/include
-    ${CMAKE_INSTALL_PREFIX}/lib/iio.framework/Headers
+    ${CMAKE_PREFIX_PATH}/include
+    ${CMAKE_PREFIX_PATH}/lib/iio.framework/Headers
     )
 
 link_directories(
-    ${CMAKE_INSTALL_PREFIX}/lib
+    ${CMAKE_PREFIX_PATH}/lib
     )
 
 file(GLOB SOURCES src/*)
@@ -61,4 +67,11 @@ set(MACOSX_BUNDLE_COPYRIGHT "${MACOSX_BUNDLE_COPYRIGHT}</string>")
 set(MACOSX_BUNDLE_COPYRIGHT "${MACOSX_BUNDLE_COPYRIGHT}\n\t<key>NSPrincipalClass</key>")
 set(MACOSX_BUNDLE_COPYRIGHT "${MACOSX_BUNDLE_COPYRIGHT}\n\t<string>NSApplication")
 
-target_link_libraries(${PROJECT_NAME} Qt5::Widgets Qt5::Charts libm2k)
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+    Qt5::Widgets Qt5::Charts
+    libm2k
+    PkgConfig::PKG_LIBIIO
+    xml2
+    /opt/brew/lib/libusb-1.0.a
+    )

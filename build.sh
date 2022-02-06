@@ -30,7 +30,7 @@ build() {
 			-GNinja
 			-DCMAKE_BUILD_TYPE=RelWithDebInfo
 			-DBUILD_SHARED_LIBS:BOOL=OFF
-			-DCMAKE_INSTALL_PREFIX="$extdir"
+			-DCMAKE_PREFIX_PATH="$extdir"
 			-S "$dir"
 			-B "$builddir"
 			)
