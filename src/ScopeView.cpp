@@ -15,13 +15,8 @@
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QValueAxis>
 
-#include <cstdlib>
 #include <libm2k/analog/m2kanalogin.hpp>
 #include <libm2k/m2k.hpp>
-#include <ostream>
-#include <vector>
-#include "QtCharts/qlineseries.h"
-#include "QtCore/qnamespace.h"
 
 QT_USE_NAMESPACE
 
