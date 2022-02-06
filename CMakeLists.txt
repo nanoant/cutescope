@@ -34,12 +34,13 @@ link_directories(
     ${CMAKE_INSTALL_PREFIX}/lib
     )
 
+file(GLOB SOURCES src/*)
+file(GLOB RESOURCES resources/*.icns)
+
 add_executable(${PROJECT_NAME}
     MACOSX_BUNDLE
-    resources/${PROJECT_NAME}.icns
-    Main.cpp
-    ScopeView.cpp
-    ScopeView.h
+    ${RESOURCES}
+    ${SOURCES}
     )
 
 set_source_files_properties(resources/${PROJECT_NAME}.icns
